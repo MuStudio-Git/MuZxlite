@@ -17,6 +17,11 @@ abstract class BaseActivity : AppCompatActivity() {
         window.initStatusBar()
     }
 
+    override fun setContentView(layoutResID: Int) {
+        super.setContentView(layoutResID)
+        initView()
+    }
+
     /** 初始化状态栏
      * Android 6.0 白底黑字状态栏
      * Android 5.0 暗色状态栏
@@ -28,4 +33,7 @@ abstract class BaseActivity : AppCompatActivity() {
             statusBarColor = color(R.color.colorGreyBar)
         }
     }
+
+    /** 初始化界面 */
+    abstract fun initView()
 }
